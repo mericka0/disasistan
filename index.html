@@ -1,133 +1,85 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
   <meta charset="UTF-8" />
-  <title>Diş Sağlığı Asistanı</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diş Asistanım</title>
   <style>
     body {
-      font-family: "Segoe UI", sans-serif;
-      background-color: #e3f2fd;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
       margin: 0;
       padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100vh;
-    }
-
-    #header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 20px;
-      color: #1565c0;
-    }
-
-    #logo {
-      width: 40px;
-      height: 40px;
     }
 
     #chat-container {
-      width: 95%;
       max-width: 600px;
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      margin: 40px auto;
+      background: #fff;
       padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
     }
 
     #chat-box {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      height: 320px;
+      max-height: 400px;
       overflow-y: auto;
-      background-color: #f7f9fc;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-    }
-
-    .user,
-    .bot {
-      padding: 10px 14px;
-      border-radius: 12px;
-      max-width: 85%;
-      word-wrap: break-word;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      margin-bottom: 15px;
     }
 
     .user {
-      align-self: flex-end;
-      background-color: #bbdefb;
-      color: #0d47a1;
+      text-align: right;
+      color: #1a73e8;
+      margin-bottom: 10px;
     }
 
     .bot {
-      align-self: flex-start;
-      background-color: #c8e6c9;
-      color: #1b5e20;
-    }
-
-    #controls {
-      display: flex;
-      gap: 10px;
+      text-align: left;
+      color: #444;
+      margin-bottom: 10px;
     }
 
     #user-input {
-      flex: 1;
-      padding: 10px;
-      border-radius: 10px;
+      width: 100%;
+      padding: 12px;
       border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-bottom: 10px;
     }
 
     button {
-      padding: 10px 14px;
-      border: none;
-      border-radius: 10px;
-      background-color: #1976d2;
+      padding: 10px 16px;
+      background-color: #1a73e8;
       color: white;
-      font-weight: bold;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.2s ease-in-out;
+      font-size: 15px;
     }
 
     button:hover {
-      background-color: #0d47a1;
+      background-color: #0f5fc0;
     }
 
     #toggle-voice {
-      background-color: #8d6e63;
-    }
-
-    #toggle-voice:hover {
-      background-color: #5d4037;
+      background-color: #777;
+      margin-left: 10px;
     }
   </style>
 </head>
-
 <body>
-  <div id="header">
-    <img src="https://img.icons8.com/fluency/48/tooth.png" alt="logo" id="logo" />
-    <h1>Diş Sağlığı Asistanı</h1>
-  </div>
-
   <div id="chat-container">
+    <h2>Diş Asistanım 🤖🦷</h2>
     <div id="chat-box"></div>
-    <div id="controls">
-      <input type="text" id="user-input" placeholder="Dişinizle ilgili sorunuzu yazın..." />
+    <input type="text" id="user-input" placeholder="Sorunuzu yazın..." onkeydown="if(event.key==='Enter') sendMessage()">
+    <div>
       <button onclick="sendMessage()">Gönder</button>
+      <button id="toggle-voice" onclick="toggleVoice()">🔈 Sesi Kapat</button>
     </div>
-    <button id="toggle-voice" onclick="toggleVoice()">🔈 Sesi Kapat</button>
   </div>
 
-  <script src="script.js"></script>
+  <!-- ask.js dosyasını çağır -->
+  <script src="ask.js"></script>
 </body>
-
 </html>
