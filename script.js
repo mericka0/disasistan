@@ -53,13 +53,22 @@ async function sendMessage() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer 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",
+        "Authorization": "Bearer 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",  // OpenRouter API Key'in
         "HTTP-Referer": "https://disasistanim.netlify.app",
         "X-Title": "dis-sagligi-asistani"
       },
       body: JSON.stringify({
         model: "openai/gpt-3.5-turbo",
-        messages: [{ role: "user", content: message }]
+        messages: [
+          {
+            role: "system",
+            content: "Sen bir diş sağlığı uzmanısın. Kullanıcının ağız ve diş sağlığıyla ilgili sorularına açık, doğru ve anlaşılır şekilde yanıt ver."
+          },
+          {
+            role: "user",
+            content: message
+          }
+        ]
       })
     });
 
