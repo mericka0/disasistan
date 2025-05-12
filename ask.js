@@ -6,7 +6,7 @@ export async function handler(event) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer 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",
+      "Authorization": "Bearer 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",
       "HTTP-Referer": "https://disasistanim.netlify.app",
       "X-Title": "dis-sagligi-asistani"
     },
