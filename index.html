@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Diş Sağlığı Asistanı</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #e3f2fd;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+      color: #1565c0;
+    }
+
+    #logo {
+      width: 40px;
+      height: 40px;
+    }
+
+    #chat-container {
+      width: 95%;
+      max-width: 600px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    #chat-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      height: 320px;
+      overflow-y: auto;
+      background-color: #f7f9fc;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    .user,
+    .bot {
+      padding: 10px 14px;
+      border-radius: 12px;
+      max-width: 85%;
+      word-wrap: break-word;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .user {
+      align-self: flex-end;
+      background-color: #bbdefb;
+      color: #0d47a1;
+    }
+
+    .bot {
+      align-self: flex-start;
+      background-color: #c8e6c9;
+      color: #1b5e20;
+    }
+
+    #controls {
+      display: flex;
+      gap: 10px;
+    }
+
+    #user-input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 14px;
+      border: none;
+      border-radius: 10px;
+      background-color: #1976d2;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #0d47a1;
+    }
+
+    #toggle-voice {
+      background-color: #8d6e63;
+    }
+
+    #toggle-voice:hover {
+      background-color: #5d4037;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header">
+    <img src="https://img.icons8.com/fluency/48/tooth.png" alt="logo" id="logo" />
+    <h1>Diş Sağlığı Asistanı</h1>
+  </div>
+
+  <div id="chat-container">
+    <div id="chat-box"></div>
+    <div id="controls">
+      <input type="text" id="user-input" placeholder="Dişinizle ilgili sorunuzu yazın..." />
+      <button onclick="sendMessage()">Gönder</button>
+    </div>
+    <button id="toggle-voice" onclick="toggleVoice()">🔈 Sesi Kapat</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
