@@ -54,7 +54,7 @@ async function sendMessage() {
       headers: {
         "Content-Type": "application/json",
         "Authorization": "Bearer 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",
-        "HTTP-Referer": "https://senin-projen.repl.co",
+        "HTTP-Referer": "https://disasistanim.netlify.app",
         "X-Title": "dis-sagligi-asistani"
       },
       body: JSON.stringify({
