@@ -53,7 +53,7 @@ async function sendMessage() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer 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",
+        "Authorization": "Bearer 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",
         "HTTP-Referer": "https://senin-projen.repl.co",
         "X-Title": "dis-sagligi-asistani"
       },
