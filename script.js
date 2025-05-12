@@ -53,7 +53,7 @@ async function sendMessage() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer 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",  // OpenRouter API Key'in
+        "Authorization": "Bearer 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",  // OpenRouter API Key'in
         "HTTP-Referer": "https://disasistanim.netlify.app",
         "X-Title": "dis-sagligi-asistani"
       },
